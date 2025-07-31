@@ -26,7 +26,7 @@ while key:
                     propietarios[nit] = {
                         "nombre":p_name,
                         "numero": p_number,
-                        "v_details": 0
+                        "v_details": {}
                     }
                     for new_vehicle in range(v_namba):
                         v_plate = input("Coloque la placa del carro: ")

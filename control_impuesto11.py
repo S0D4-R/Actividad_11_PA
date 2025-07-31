@@ -58,4 +58,4 @@ while key:
                           f"Año: {details["year"]}\n"
                           f"Marca: {details["brand"]}\n"
                           f"Tipo: {details["type"]}\n"
-                          f"Impuesto: {details["tax"]}")
+                          f"Impuesto: {details["tax"]}\n\n")

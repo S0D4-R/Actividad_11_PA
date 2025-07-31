@@ -4,7 +4,7 @@ vehicle_d = {}
 key = True
 print("-------Bienvenido al program de boutique-------")
 while key:
-    ops = input("\nSeleccione una opción:\n1. Agregar productos\n2. Ver productos\n3. Buscar producto\n4. Total de inventario\n5. Productos por categoría\n6. Salir")
+    ops = input("\nSeleccione una opción:\n1. Agregar Propietarios\n2. Ver propietarios y autos\n3. Buscar propietarios\n4. Total de inventario\n5. Productos por categoría\n6. Salir")
     match ops:
         case "1":
             try:
@@ -50,12 +50,25 @@ while key:
         case "2":
             # Display de propietarios
             print("Estos son los productos registrados: ")
+            contador = 0
             for nits, item in propietarios.items():
                 print(f"Código: {nits}\nNombre: {item["nombre"]}\nNumero: {item["numero"]}\n\n")
-                print("Autos:\n")
+                print(f"----------------Autos de {item["nombre"]}:\n")
                 for auto, details in item["v_details"].items():
+                    contador += 1
                     print(f"Placa: {auto}\n"
                           f"Año: {details["year"]}\n"
                           f"Marca: {details["brand"]}\n"
                           f"Tipo: {details["type"]}\n"
                           f"Impuesto: {details["tax"]}\n\n")
+        case "3":
+            tax_up = 0
+            tax_down = 0
+            searched = input("Coloque el NIT de la persona buscada")
+            if searched in propietarios:
+                for plate, detail in propietarios[searched]["v_details"].items():
+                    if detail["tax"]:
+                        tax_up += 1
+                    elif not detail["tax"]:
+                        tax_down += 1
+                print(f"{propietarios[searched]["nombre"]} tiene {tax_up} pagados y {tax_down} que no lo están...")

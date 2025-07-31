@@ -54,4 +54,8 @@ while key:
                 print(f"Código: {nits}\nNombre: {item["nombre"]}\nNumero: {item["numero"]}\n\n")
                 print("Autos:\n")
                 for auto, details in item["v_details"].items():
-                    print(f"Placa: {auto}\nAño: {details["year"]}\nMarca: {details["brand"]}\nTipo: {details["type"]}\nImpuesto: {details["tax"]}")
+                    print(f"Placa: {auto}\n"
+                          f"Año: {details["year"]}\n"
+                          f"Marca: {details["brand"]}\n"
+                          f"Tipo: {details["type"]}\n"
+                          f"Impuesto: {details["tax"]}")
